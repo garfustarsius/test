@@ -61,8 +61,20 @@ app.get('/dashboard', (req, res) => {
   if (!req.session.userId) {
     return res.redirect('/');
   }
-  res.send('Welcome to the dashboard! <a href="/logout">Logout</a>');
+
+  // Fetch the user's data from the database here
+  // You can retrieve user-specific information and pass it to the dashboard view.
+
+  db.get('SELECT username FROM users WHERE id = ?', [req.session.userId], (err, user) => {
+    if (err) {
+      console.error('Error fetching user data:', err);
+      return res.redirect('/');
+    }
+
+    res.render('dashboard', { username: user.username });
+  });
 });
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
