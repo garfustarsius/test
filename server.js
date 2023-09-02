@@ -61,9 +61,21 @@ app.get('/dashboard', (req, res) => {
   if (!req.session.userId) {
     return res.redirect('/');
   }
-  res.send('Welcome to the dashboard!');
+  res.send('Welcome to the dashboard! <a href="/logout">Logout</a>');
 });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
+});
+
+
+// Logout route
+app.get('/logout', (req, res) => {
+  // Destroy the user's session
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('Error destroying session:', err);
+    }
+    res.redirect('/');
+  });
 });
