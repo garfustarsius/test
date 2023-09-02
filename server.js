@@ -31,6 +31,12 @@ app.get('/register', (req, res) => {
 app.post('/register', async (req, res) => {
   const { username, password } = req.body;
 
+    // Check if the password meets the minimum length requirement
+    if (password.length < 6) {
+      return res.render('register', { error: 'Password must be at least 6 characters long' });
+    }
+  
+
   // Hash the password
   const hashedPassword = await bcrypt.hash(password, 10);
 

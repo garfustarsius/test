@@ -5,10 +5,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
+  <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
-  <h1>Welcome, <%= username %>!</h1>
+  
   <!-- Add content specific to the user's dashboard here -->
-  <a href="/logout">Logout</a>
+  <header>
+    <nav>
+        <div class="container">
+          <h1>Welcome, <%= username %>!</h1>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/logout" id="logout-button">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<section id="hero">
+    <div class="container">
+        <h2>Welcome to Our Website</h2>
+        <p>Your destination for amazing products and services.</p>
+        <a href="#contact" class="cta-button">Get Started</a>
+    </div>
+</section>
+
+<section id="features">
+    <div class="container">
+        <h2>Key Features</h2>
+        <div class="feature">
+            <img src="icon1.png" alt="Feature 1">
+            <h3>Feature 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="feature">
+            <img src="icon2.png" alt="Feature 2">
+            <h3>Feature 2</h3>
+            <p>Nullam non libero eu dui vehicula tincidunt.</p>
+        </div>
+        <div class="feature">
+            <img src="icon3.png" alt="Feature 3">
+            <h3>Feature 3</h3>
+            <p>Vestibulum commodo urna euismod, scelerisque arcu vel.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or inquiries, please feel free to get in touch.</p>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 My Beautiful Landing Page</p>
+    </div>
+</footer>
+
+  
 </body>
 </html>
