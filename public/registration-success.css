@@ -1,0 +1,35 @@
+/* public/registration-success.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #007bff; /* Change the color to your preference */
+  }
+  
+  p {
+    font-size: 18px;
+    color: #333; /* Change the color to your preference */
+    text-align: center;
+  }
+  
+  a {
+    color: #007bff; /* Change the color to your preference */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

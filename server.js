@@ -8,7 +8,7 @@ const port = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
-  secret: 'your-secret-key',
+  secret: 'garfustarsius',
   resave: false,
   saveUninitialized: true,
 }));
@@ -45,7 +45,7 @@ app.post('/register', async (req, res) => {
     if (err) {
       return res.render('register', { error: 'User already exists' });
     }
-    res.redirect('/');
+    res.render('registration-success');
   });
 });
 
@@ -69,7 +69,7 @@ app.get('/dashboard', (req, res) => {
   }
 
   // Fetch the user's data from the database here
-  // You can retrieve user-specific information and pass it to the dashboard view.
+  
 
   db.get('SELECT username FROM users WHERE id = ?', [req.session.userId], (err, user) => {
     if (err) {
@@ -82,11 +82,6 @@ app.get('/dashboard', (req, res) => {
 });
 
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
-
 // Logout route
 app.get('/logout', (req, res) => {
   // Destroy the user's session
@@ -96,4 +91,9 @@ app.get('/logout', (req, res) => {
     }
     res.redirect('/');
   });
+});
+
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

@@ -6,78 +6,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="styles2.css">
-</head>
-<body>
   
-  <!-- Add content specific to the user's dashboard here -->
-  <header>
-    <nav>
-        <div class="container">
-          <h1>Welcome, <%= username %>!</h1>
-            <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="/logout" id="logout-button">Logout</a></li>
-            </ul>
+</head>
+
+
+<body>
+    <header>
+        <h1>Welcome, <%= username %>!</h1>
+    </header>
+    <section class="center-content">
+        <div class="reservation-form">
+            <h2>Reservation Form</h2>
+            <form action="reservation_process.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="party-size">Party Size:</label>
+                <input type="number" id="party-size" name="party-size" required>
+
+                <label for="special-requests">Special Requests:</label>
+                <textarea id="special-requests" name="special-requests" rows="4"></textarea>
+
+                <button type="submit">Submit Reservation</button>
+            </form>
         </div>
-    </nav>
-</header>
+    </section>
+    <section class="restaurant-info">
+        <h2>Restaurant Information</h2>
+        <p>Our restaurant is open from 11:30 AM to 10:00 PM, Monday to Sunday.</p>
+        <p>Address: Philippines</p>
+        <p>Phone: 09xx-xxxx / (xx) xxx-xxxx</p>
+    </section>
+    <footer>
+        <p>&copy; 2023 GROUP4 RESTO. All rights reserved.</p>
+        <p><a href="/logout"><button type="submit">Log Out</button></a></p>
+    </footer>
 
-<section id="hero">
-    <div class="container">
-        <h2>Welcome to Our Website</h2>
-        <p>Your destination for amazing products and services.</p>
-        <a href="#contact" class="cta-button">Get Started</a>
-    </div>
-</section>
-
-<section id="features">
-    <div class="container">
-        <h2>Key Features</h2>
-        <div class="feature">
-            <img src="icon1.png" alt="Feature 1">
-            <h3>Feature 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="feature">
-            <img src="icon2.png" alt="Feature 2">
-            <h3>Feature 2</h3>
-            <p>Nullam non libero eu dui vehicula tincidunt.</p>
-        </div>
-        <div class="feature">
-            <img src="icon3.png" alt="Feature 3">
-            <h3>Feature 3</h3>
-            <p>Vestibulum commodo urna euismod, scelerisque arcu vel.</p>
-        </div>
-    </div>
-</section>
-
-<section id="about">
-    <div class="container">
-        <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit.</p>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or inquiries, please feel free to get in touch.</p>
-        <form>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <p>&copy; 2023 My Beautiful Landing Page</p>
-    </div>
-</footer>
 
   
 </body>
